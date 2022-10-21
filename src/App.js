@@ -93,6 +93,7 @@ const reducer = (state, {type, payload}) => {
       case actions.CLEAR : 
         return {}
       case actions.DELETE_DIGIT: 
+        if(!state.currentOperand) return state
         if (state.overWrite) {
           return {
             ...state,
